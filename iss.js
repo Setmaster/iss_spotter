@@ -58,7 +58,7 @@ const fetchISSFlyOverTimes = function(coords, callback) {
     if (error) {
       callback(error, null);
     } else if (response.statusCode !== 200) {
-      const msg = `Status Code ${response.statusCode} when fetching IP. Response: ${response.body}`;
+      const msg = `Status Code ${response.statusCode} when fetching ISS flyover times. Response: ${response.body}`;
       callback(Error(msg), null);
     } else if (response.body["message"] !== "success") {
       const msg = `Success status was false. Server message says: ${response.body["message"]} when fetching for coords ${coords}`;
